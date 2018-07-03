@@ -515,7 +515,23 @@
   
 
   
-  
+  <div id="gittalk-container"></div> 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '29fd06ce2375b14338fe',
+  	clientSecret: '090b271a3e6ce6fae6fc80ce4d40e3ee14b671aa',
+  	repo: 'mycomments',
+  	owner: 'Ziven-n',
+  	admin: ['Ziven-n'],
+  	id: location.pathname,
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gittalk-container') 
+}
+</script>
   
 
   
