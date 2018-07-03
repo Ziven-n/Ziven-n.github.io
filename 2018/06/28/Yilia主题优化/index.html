@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/Ziven-n/Blog-Back-Up/blob/master/source/picture/Yilia%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/%E5%8A%A8%E6%80%81%E6%A0%87%E7%AD%BE%E6%95%88%E6%9E%9C.gif?raw=true">
 <meta property="og:image" content="https://github.com/Ziven-n/Blog-Back-Up/blob/master/source/picture/Yilia%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/%E7%82%B9%E5%87%BB%E5%B0%8F%E7%BA%A2%E5%BF%83%E6%95%88%E6%9E%9C.gif?raw=true">
-<meta property="og:updated_time" content="2018-07-03T03:26:54.000Z">
+<meta property="og:updated_time" content="2018-07-03T07:44:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yilia主题优化">
 <meta name="twitter:description" content="Hexo主题yilia持续优化中…">
@@ -78,6 +78,8 @@
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">文章搜索 </a>
     			
             
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接</a>
     			
             
     			
@@ -337,13 +339,13 @@
 <a id="more"></a>
 <h2 id="给博客增加动态标签"><a href="#给博客增加动态标签" class="headerlink" title="给博客增加动态标签"></a>给博客增加动态标签</h2><p>效果如下</p>
 <p><img src="https://github.com/Ziven-n/Blog-Back-Up/blob/master/source/picture/Yilia%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/%E5%8A%A8%E6%80%81%E6%A0%87%E7%AD%BE%E6%95%88%E6%9E%9C.gif?raw=true" alt="link"></p>
-<h5 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h5><p>打开博客路径themes/yilia/layout/layout.ejs</p>
-<p>在“”前添加如下代码即可</p>
+<h5 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h5><p>打开博客路径<code>themes/yilia/layout/layout.ejs</code></p>
+<p>在<code>&lt;/body&gt;</code>前添加如下代码即可</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;var OriginTitile=document.title,st;document.addEventListener(&quot;visibilitychange&quot;,function()&#123;document.hidden?(document.title=&quot;看不见我🙈~看不见我🙈~&quot;,clearTimeout(st)):(document.title=&quot;(๑•̀ㅂ•́) ✧被发现了～&quot;,st=setTimeout(function()&#123;document.title=OriginTitile&#125;,3e3))&#125;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="给博客增加点击小红心效果"><a href="#给博客增加点击小红心效果" class="headerlink" title="给博客增加点击小红心效果"></a>给博客增加点击小红心效果</h2><p>效果如下</p>
 <p><img src="https://github.com/Ziven-n/Blog-Back-Up/blob/master/source/picture/Yilia%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/%E7%82%B9%E5%87%BB%E5%B0%8F%E7%BA%A2%E5%BF%83%E6%95%88%E6%9E%9C.gif?raw=true" alt="link"></p>
-<h5 id="实现方式-1"><a href="#实现方式-1" class="headerlink" title="实现方式"></a>实现方式</h5><p>在 themes/yilia/source 文件目录下增加<a href="https://github.com/Ziven-n/Blog-Back-Up/blob/master/themes/yilia/source/love.js" target="_blank" rel="noopener">love.js</a>文件</p>
-<p>然后在themes/yilia/layout/_partial/footer.ejs 文件， 在文件的最后， 添加以下代码：</p>
+<h5 id="实现方式-1"><a href="#实现方式-1" class="headerlink" title="实现方式"></a>实现方式</h5><p>在 <code>themes/yilia/source</code> 文件目录下增加<a href="https://github.com/Ziven-n/Blog-Back-Up/blob/master/themes/yilia/source/love.js" target="_blank" rel="noopener">love.js</a>文件</p>
+<p>然后在<code>themes/yilia/layout/_partial/footer.ejs</code> 文件， 在文件的最后， 添加以下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--页面点击小红心--&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/love.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
       
@@ -631,6 +633,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
+      
+      
     
       
       
@@ -642,13 +646,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">文章搜索 </a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">文章搜索 </a></li>
       
         
       
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情链接</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -723,6 +729,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://www.cocoachina.com/bbs/thread.php?fid-21.html" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CocoaChina</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
