@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ziven.cc">
-  <title>Archives: 2015 | Ziven</title>
+  <title>SpriteKit 中 node 不显示或者闪烁的问题 | Ziven</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="😯😯">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ziven">
-<meta property="og:url" content="https://ziven.cc/archives/2015/index.html">
+  <meta name="description" content="今天遇到了第二个坑，zPosition的问题">
+<meta name="keywords" content="iOS游戏开发,SpriteKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpriteKit 中 node 不显示或者闪烁的问题">
+<meta property="og:url" content="https://ziven.cc/2018/07/20/SpriteKit-中-node-不显示或者闪烁的问题/index.html">
 <meta property="og:site_name" content="Ziven">
-<meta property="og:description" content="😯😯">
+<meta property="og:description" content="今天遇到了第二个坑，zPosition的问题">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-20T07:29:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ziven">
-<meta name="twitter:description" content="😯😯">
+<meta name="twitter:title" content="SpriteKit 中 node 不显示或者闪烁的问题">
+<meta name="twitter:description" content="今天遇到了第二个坑，zPosition的问题">
   
     <link rel="alternative" href="/atom.xml" title="Ziven" type="application/atom+xml">
   
@@ -311,78 +313,243 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<!-- Import APlayer -->
+<link href="https://cdn.jsdelivr.net/npm/aplayer@1.9.0/dist/APlayer.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.0/dist/APlayer.min.js"></script>
+<!-- Import meting.js -->
+<script src="https://cdn.jsdelivr.net/npm/meting@1.1.1/dist/Meting.min.js"></script>
+
+
+<article id="post-SpriteKit-中-node-不显示或者闪烁的问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/08/hello-world/" class="archive-article-date">
-  	<time datetime="2015-07-07T16:25:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/08/hello-world/">Hello World!</a>
+    <h1 class="article-title" itemprop="name">
+      SpriteKit 中 node 不显示或者闪烁的问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/20/SpriteKit-中-node-不显示或者闪烁的问题/" class="archive-article-date">
+  	<time datetime="2018-07-20T15:24:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天遇到了第二个坑，<code>zPosition</code>的问题</p>
+<a id="more"></a>
+<p>在游戏开发过程中，创建的小鸟<code>node</code>节点在执行动画的时候闪烁，甚至有时候不显示，创建上下水管的过程中也是，水管不显示，或者随机显示，<code>FPS</code>值稳定<code>60</code>，但是就是有问题，<code>google</code>了一下发现，跟<code>iOS</code>里不同，在<code>iOS</code>中，控件添加到父视图上时，会有先来后到的顺序，后添加的会处于最上层，而<code>SpriteKit</code>里则不一样，即使你后添加的顺序也不是一定的，需要设置<code>zPosition</code>将节点<code>node</code>的层级手动提升.</p>
+<h2 id="zPosition"><a href="#zPosition" class="headerlink" title="zPosition"></a>zPosition</h2><p>在<code>SpriteKit</code>中，每个节点都有一个的属性<code>zPosition</code>，默认值为<code>0</code>，之前创建<code>SKView</code>时，我们将其属性<code>ignoresSiblingOrder</code>设置为<code>Yes</code>，这才导致了顺序的随机性，设置<code>ignoresSiblingOrder</code>为<code>No</code>,可以使节点<code>node</code>按照先来后到的顺序绘制。</p>
+<blockquote>
+<p>默认情况下<code>ignoresSiblingOrder</code>设置为<code>Yes</code>，因为它允许<code>SpriteKit</code>完成潜在的性能优化使游戏运行的更快.</p>
+<p>鉴于此，可以将游戏默认背景节点的<code>zPosition</code>设置为小于<code>0</code>的值</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>扫码加好友😄<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hello</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">iOS游戏开发</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">world</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpriteKit</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/aplayer//" class="article-tag-list-link color3">aplayer</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/aplayer/music//" class="article-tag-list-link color1">music</a>
+        			<a href="/categories/zPosition//" class="article-tag-list-link color5">zPosition</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ziven.cc/2018/07/20/SpriteKit-中-node-不显示或者闪烁的问题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/07/20/SpriteKit-中的anchorPoint和position/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpriteKit 中的anchorPoint和position</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+   
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '29fd06ce2375b14338fe',
+  	clientSecret: '090b271a3e6ce6fae6fc80ce4d40e3ee14b671aa',
+  	repo: 'mycomments',
+  	owner: 'Ziven-n',
+  	admin: ['Ziven-n'],
+  	id: 'Fri Jul 20 2018 15:24:52 GMT+0000',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+  
+  
+  
+
+  
+
+  
+  <div id="SOHUCS" sid="SpriteKit-中-node-不显示或者闪烁的问题" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -421,8 +588,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

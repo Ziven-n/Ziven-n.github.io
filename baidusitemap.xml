@@ -4,16 +4,38 @@
 
     
   <url>
+    <loc>https://ziven.cc/2018/07/20/SpriteKit-%E4%B8%AD-node-%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%88%96%E8%80%85%E9%97%AA%E7%83%81%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-07-20T07:29:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>SpriteKit 中 node 不显示或者闪烁的问题</title>
+        <pubTime>2018-07-20T15:24:52.000Z</pubTime>
+        
+        <tag>iOS游戏开发</tag>
+         
+        <tag>SpriteKit</tag>
+         
+         
+           
+             
+              <breadCrumb title="zPosition" url="https://ziven.cc/categories/zPosition/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://ziven.cc/2018/07/20/SpriteKit-%E4%B8%AD%E7%9A%84anchorPoint%E5%92%8Cposition/</loc>
-    <lastmod>2018-07-19T09:19:07.000Z</lastmod>
+    <lastmod>2018-07-19T09:20:31.000Z</lastmod>
     <data>
         <display>
         <title>SpriteKit 中的anchorPoint和position</title>
         <pubTime>2018-07-19T17:13:13.000Z</pubTime>
         
-        <tag>SpriteKit</tag>
-         
         <tag>iOS游戏开发</tag>
+         
+        <tag>SpriteKit</tag>
          
          
            
