@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Ziven">
 <meta property="og:description" content="官方的文档看得实在头疼，整理一份自己踩坑之后的非官方集成文档">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-10T02:59:54.000Z">
+<meta property="og:updated_time" content="2018-09-10T03:04:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS单独集成QQ分享">
 <meta name="twitter:description" content="官方的文档看得实在头疼，整理一份自己踩坑之后的非官方集成文档">
@@ -357,13 +357,41 @@
 <h3 id="下载SDK资源"><a href="#下载SDK资源" class="headerlink" title="下载SDK资源"></a>下载SDK资源</h3><p>链接在此   <a href="http://wiki.connect.qq.com/sdk下载" target="_blank" rel="noopener">QQSDK</a></p>
 <p>1.去<a href="http://op.open.qq.com/" target="_blank" rel="noopener">腾讯开放平台</a>注册账号以及创建自己的应用，创建应用之后会有审核期，一般两天左右，创建后会得到<code>APP ID</code>，在本文第4步会用到。</p>
 <p>2.导入<code>TencentOpenAPI.framework</code>,并添加依赖库<code>SystemConfiguration.framework</code>和<code>libc++.tbd</code></p>
-<p>3.在<code>info.plist</code>文件中添加白名单,<br>此处白名单列表参考了极光分享的文档<br><!-- QQ、Qzone URL Scheme 白名单--><br>    <string>mqqapi</string><br>    <string>mqq</string><br>    <string>mqqOpensdkSSoLogin</string><br>    <string>mqqconnect</string><br>    <string>mqqopensdkdataline</string><br>    <string>mqqopensdkgrouptribeshare</string><br>    <string>mqqopensdkfriend</string><br>    <string>mqqopensdkapi</string><br>    <string>mqqopensdkapiV2</string><br>    <string>mqqopensdkapiV3</string><br>    <string>mqqopensdkapiV4</string><br>    <string>mqzoneopensdk</string><br>    <string>wtloginmqq</string><br>    <string>wtloginmqq2</string><br>    <string>mqqwpa</string><br>    <string>mqzone</string><br>    <string>mqzonev2</string><br>    <string>mqzoneshare</string><br>    <string>wtloginqzone</string><br>    <string>mqzonewx</string><br>    <string>mqzoneopensdkapiV2</string><br>    <string>mqzoneopensdkapi19</string><br>    <string>mqzoneopensdkapi</string><br>    <string>mqqbrowser</string><br>    <string>mttbrowser</string></p>
+<p>3.在<code>info.plist</code>文件中添加白名单,<br>此处白名单列表参考了极光分享的文档</p>
+<blockquote>
+<!-- QQ、Qzone URL Scheme 白名单-->
+<pre><code>&lt;string&gt;mqqapi&lt;/string&gt;
+&lt;string&gt;mqq&lt;/string&gt;
+&lt;string&gt;mqqOpensdkSSoLogin&lt;/string&gt;
+&lt;string&gt;mqqconnect&lt;/string&gt;
+&lt;string&gt;mqqopensdkdataline&lt;/string&gt;
+&lt;string&gt;mqqopensdkgrouptribeshare&lt;/string&gt;
+&lt;string&gt;mqqopensdkfriend&lt;/string&gt;
+&lt;string&gt;mqqopensdkapi&lt;/string&gt;
+&lt;string&gt;mqqopensdkapiV2&lt;/string&gt;
+&lt;string&gt;mqqopensdkapiV3&lt;/string&gt;
+&lt;string&gt;mqqopensdkapiV4&lt;/string&gt;
+&lt;string&gt;mqzoneopensdk&lt;/string&gt;
+&lt;string&gt;wtloginmqq&lt;/string&gt;
+&lt;string&gt;wtloginmqq2&lt;/string&gt;
+&lt;string&gt;mqqwpa&lt;/string&gt;
+&lt;string&gt;mqzone&lt;/string&gt;
+&lt;string&gt;mqzonev2&lt;/string&gt;
+&lt;string&gt;mqzoneshare&lt;/string&gt;
+&lt;string&gt;wtloginqzone&lt;/string&gt;
+&lt;string&gt;mqzonewx&lt;/string&gt;
+&lt;string&gt;mqzoneopensdkapiV2&lt;/string&gt;
+&lt;string&gt;mqzoneopensdkapi19&lt;/string&gt;
+&lt;string&gt;mqzoneopensdkapi&lt;/string&gt;
+&lt;string&gt;mqqbrowser&lt;/string&gt;
+&lt;string&gt;mttbrowser&lt;/string&gt;
+</code></pre></blockquote>
 <p>4.在<code>info.plist</code>文件下的<code>URL Types</code>里加入设置<code>URL Schemes</code></p>
 <p><code>URL Schemes</code>设置为<code>tencent+APPID</code></p>
 <p>5.在需要分享的VC中导入头文件</p>
 <blockquote>
-<p>#import  <tencentopenapi qqapiinterface.h=""></tencentopenapi></p>
-<p>#import <tencentopenapi qqapiinterfaceobject.h=""></tencentopenapi></p>
+<p><code>#import  &lt;TencentOpenAPI/QQApiInterface.h&gt;</code></p>
+<p><code>#import &lt;TencentOpenAPI/QQApiInterfaceObject.h&gt;</code></p>
 </blockquote>
 <p>6.分享代码</p>
 <blockquote>
@@ -679,7 +707,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站统计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gitalk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">yilia优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -688,14 +724,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">world</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网站统计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">yilia优化</a>
               </li>
              
               <li class="article-tag-list-item">
