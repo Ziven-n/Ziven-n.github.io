@@ -17,7 +17,7 @@
 <meta property="og:description" content="最近更新博客时发现使用live2d后会导致不蒜子的统计功能失效解决方案如下">
 <meta property="og:locale">
 <meta property="article:published_time" content="2025-05-23T18:19:22.000Z">
-<meta property="article:modified_time" content="2025-05-23T10:18:12.095Z">
+<meta property="article:modified_time" content="2025-05-23T10:31:36.036Z">
 <meta property="article:author" content="Ziven">
 <meta property="article:tag" content="网站统计">
 <meta property="article:tag" content="live2d">
@@ -358,7 +358,7 @@
           
                     <h4 id="最近更新博客时发现使用live2d后会导致不蒜子的统计功能失效"><a href="#最近更新博客时发现使用live2d后会导致不蒜子的统计功能失效" class="headerlink" title="最近更新博客时发现使用live2d后会导致不蒜子的统计功能失效"></a>最近更新博客时发现使用live2d后会导致不蒜子的统计功能失效</h4><h5 id="解决方案如下"><a href="#解决方案如下" class="headerlink" title="解决方案如下"></a>解决方案如下</h5><span id="more"></span>
 <p> 在<code>yilia/layout/_partial/article.ejs</code>文件里新增以下代码，注意是额外增加的，需要在你项目中已配置不蒜子的地方额外再配置一次</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;display: none;&quot;&gt;</span><br><span class="line">  &lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;&lt;/span&gt;&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;display: none;&quot;&gt;</span><br><span class="line">  &lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;&lt;/span&gt;&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
 <p> 在<code>yilia/layout/_partial/footer.ejs</code>文件里新增以下代码</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;display: none;&quot;&gt;</span><br><span class="line">    &lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;&lt;/span&gt;&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
@@ -601,11 +601,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">gitalk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">yilia优化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gitalk</a>
+                <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,7 +621,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
+                <a href="javascript:void(0)" class="js-tag color2">live2d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,10 +630,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Test</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">live2d</a>
               </li>
             
             <div class="clearfix"></div>
