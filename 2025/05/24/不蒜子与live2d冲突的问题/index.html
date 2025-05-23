@@ -7,18 +7,20 @@
   <meta name="baidu-site-verification" content="codeva-iepUM3RNnG" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ziven.cc">
-  <title>相册 | Ziven</title>
+  <title>不蒜子与live2d冲突的问题 | Ziven</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Photos 	待续   	图片正在加载中…     (function() {     var loadScript &#x3D; function(path) {       var $script &#x3D; document.createElement(&#39;script&#39;)       document.getElementsByTagName(&#39;body&#39;)[0].appendChild($scrip">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://ziven.cc/photos/index.html">
+  <meta name="description" content="最近更新博客时发现使用live2d后会导致不蒜子的统计功能失效解决方案如下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不蒜子与live2d冲突的问题">
+<meta property="og:url" content="https://ziven.cc/2025/05/24/%E4%B8%8D%E8%92%9C%E5%AD%90%E4%B8%8Elive2d%E5%86%B2%E7%AA%81%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Ziven">
-<meta property="og:description" content="Photos 	待续   	图片正在加载中…     (function() {     var loadScript &#x3D; function(path) {       var $script &#x3D; document.createElement(&#39;script&#39;)       document.getElementsByTagName(&#39;body&#39;)[0].appendChild($scrip">
+<meta property="og:description" content="最近更新博客时发现使用live2d后会导致不蒜子的统计功能失效解决方案如下">
 <meta property="og:locale">
-<meta property="article:published_time" content="2025-05-22T03:06:33.695Z">
-<meta property="article:modified_time" content="2025-05-22T03:06:33.695Z">
+<meta property="article:published_time" content="2025-05-23T18:19:22.000Z">
+<meta property="article:modified_time" content="2025-05-23T10:18:12.095Z">
 <meta property="article:author" content="Ziven">
+<meta property="article:tag" content="网站统计">
+<meta property="article:tag" content="live2d">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Ziven" type="application/atom+xml">
@@ -320,7 +322,7 @@
 </div>
 
 
-<article id="post-photos"
+<article id="post-不蒜子与live2d冲突的问题"
   class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -328,39 +330,41 @@
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      不蒜子与live2d冲突的问题
     </h1>
   
 
 
           <!--显示阅读次数#ef7522【黄色】-->
           
+            <br />
+            <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+              <span class="icon-sort"></span>
+              <span id="busuanzi_container_page_pv" style="color:#C4C5FD;font-size:14px;">
+                阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+              </span>
+            </a>
+            
 
               
+                <a href="/2025/05/24/%E4%B8%8D%E8%92%9C%E5%AD%90%E4%B8%8Elive2d%E5%86%B2%E7%AA%81%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2025-05-23T18:19:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-23</time>
+</a>
+                  
       </header>
       
         <div class="article-entry" itemprop="articleBody">
           
-                    <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)">Photos</a>
-	<a class="photos-btn" href="#">待续</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/lawlitewang20/" target="_blank" class="open-ins">图片正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+                    <h4 id="最近更新博客时发现使用live2d后会导致不蒜子的统计功能失效"><a href="#最近更新博客时发现使用live2d后会导致不蒜子的统计功能失效" class="headerlink" title="最近更新博客时发现使用live2d后会导致不蒜子的统计功能失效"></a>最近更新博客时发现使用live2d后会导致不蒜子的统计功能失效</h4><h5 id="解决方案如下"><a href="#解决方案如下" class="headerlink" title="解决方案如下"></a>解决方案如下</h5><span id="more"></span>
+<p> 在<code>yilia/layout/_partial/article.ejs</code>文件里新增以下代码，注意是额外增加的，需要在你项目中已配置不蒜子的地方额外再配置一次</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;display: none;&quot;&gt;</span><br><span class="line">  &lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;&lt;/span&gt;&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 在<code>yilia/layout/_partial/footer.ejs</code>文件里新增以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;display: none;&quot;&gt;</span><br><span class="line">    &lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;&lt;/span&gt;&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>其他已配置的不蒜子统计不要动</p>
+<p>原因参考：<br><a href="https://ouuan.moe/post/2022/08/busuanzi-and-live2d">busuanzi 访问量统计与 live2d 插件同时使用导致 busuanzi 不显示的根本原因以及解决方法</a></p>
+<p>本文中的解决方案可能更简单一点</p>
+
                       
 
                         
@@ -368,7 +372,33 @@
         <div class="article-info article-info-index">
           
               
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网站统计</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">live2d</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
                 
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Hexo//" class="article-tag-list-link color5">Hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
                   
 
@@ -379,6 +409,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2025/05/23/go%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">go开发环境配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
     
       <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -389,6 +429,53 @@
 
 
         
+          
+
+                
+                   
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '29fd06ce2375b14338fe',
+  	clientSecret: '090b271a3e6ce6fae6fc80ce4d40e3ee14b671aa',
+  	repo: 'mycomments',
+  	owner: 'Ziven-n',
+  	admin: ['Ziven-n'],
+  	id: 'Fri May 23 2025 18:19:22 GMT+0000',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+                    
+
+                      
+
+
+
+                            
+                              <div id="SOHUCS" sid="不蒜子与live2d冲突的问题" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+                                
+
+                                  
+
+
+
+                                      
+                                            
           </div>
         </div>
       </div>
@@ -431,7 +518,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

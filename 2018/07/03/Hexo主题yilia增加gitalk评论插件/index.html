@@ -309,15 +309,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-<!-- Import APlayer -->
+            <!-- Import APlayer -->
 <link href="https://cdn.jsdelivr.net/npm/aplayer@1.9.0/dist/APlayer.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.0/dist/APlayer.min.js"></script>
 <!-- Import meting.js -->
 <script src="https://cdn.jsdelivr.net/npm/meting@1.1.1/dist/Meting.min.js"></script>
 
+<!-- 被干掉的不蒜子  -->
+<div style="display: none;">
+  <span id="busuanzi_container_page_pv"></span><span id="busuanzi_container_site_pv"></span>
+</div>
 
-<article id="post-Hexo主题yilia增加gitalk评论插件" class="article article-type-post " itemscope itemprop="blogPost">
+
+<article id="post-Hexo主题yilia增加gitalk评论插件"
+  class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -329,27 +334,27 @@
   
 
 
-        <!--显示阅读次数#ef7522【黄色】-->
-        
-        <br/>
-        <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
-        <span class="icon-sort"></span>
-        <span id="busuanzi_container_page_pv" style="color:#C4C5FD;font-size:14px;">
-        阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
-        </span>
-        </a>
-        
+          <!--显示阅读次数#ef7522【黄色】-->
+          
+            <br />
+            <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+              <span class="icon-sort"></span>
+              <span id="busuanzi_container_page_pv" style="color:#C4C5FD;font-size:14px;">
+                阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+              </span>
+            </a>
+            
 
-        
-        <a href="/2018/07/03/Hexo%E4%B8%BB%E9%A2%98yilia%E5%A2%9E%E5%8A%A0gitalk%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/" class="archive-article-date">
+              
+                <a href="/2018/07/03/Hexo%E4%B8%BB%E9%A2%98yilia%E5%A2%9E%E5%8A%A0gitalk%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/" class="archive-article-date">
   	<time datetime="2018-07-03T15:37:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
 </a>
-        
+                  
       </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <p>之前使用的<code>gitment</code>没有更新了，而且移动端适配做的不够好，故将评论功能迁移至<code>gitalk</code>,以下是替换过程</p>
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <p>之前使用的<code>gitment</code>没有更新了，而且移动端适配做的不够好，故将评论功能迁移至<code>gitalk</code>,以下是替换过程</p>
 <span id="more"></span>
 
 <h2 id="在layout-partial-post目录下新增gitalk-ejs文件"><a href="#在layout-partial-post目录下新增gitalk-ejs文件" class="headerlink" title="在layout/_partial/post目录下新增gitalk.ejs文件"></a>在<code>layout/_partial/post</code>目录下新增<code>gitalk.ejs</code>文件</h2><blockquote>
@@ -364,13 +369,13 @@
 <h2 id="最后在yilia主题配置文件中新增gitalk相关的配置："><a href="#最后在yilia主题配置文件中新增gitalk相关的配置：" class="headerlink" title="最后在yilia主题配置文件中新增gitalk相关的配置："></a>最后在<code>yilia</code>主题配置文件中新增<code>gitalk</code>相关的配置：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#6、gitalk评论</span><br><span class="line">gitalk:</span><br><span class="line">  enable:  true</span><br><span class="line">  githubID:  Ziven-n   </span><br><span class="line">  repo:  &#x27;mycomments&#x27;</span><br><span class="line">  ClientID:  &#x27;29fd06ce234338fe233&#x27;</span><br><span class="line">  ClientSecret:  &#x27;090b271a3e6ce6fae6fc80ce4d4344671aa&#x27;</span><br><span class="line">  adminUser:  Ziven-n</span><br><span class="line">  distractionFreeMode: true</span><br></pre></td></tr></table></figure>
 
 <h2 id="更新一下即可"><a href="#更新一下即可" class="headerlink" title="更新一下即可"></a>更新一下即可</h2>
-      
+                      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+                        
+        </div>
+        <div class="article-info article-info-index">
+          
+              
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -382,7 +387,7 @@
 		</ul>
 	</div>
 
-      
+                
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -395,11 +400,11 @@
 	</div>
 
 
-      
+                  
 
-      
-      <div class="clearfix"></div>
-    </div>
+                      
+                            <div class="clearfix"></div>
+        </div>
   </div>
 </article>
 
@@ -423,42 +428,20 @@
   
 </nav>
 
-
-<aside class="wrap-side-operation">
+    
+      <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8layout-partial-post%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%96%B0%E5%A2%9Egitalk-ejs%E6%96%87%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">在layout&#x2F;_partial&#x2F;post目录下新增gitalk.ejs文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9source-src-css-%E7%9B%AE%E5%BD%95%E4%B8%8Bcomment-scss%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">修改source-src&#x2F;css&#x2F;目录下comment.scss文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8layout-partial%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84article-ejs%E6%96%87%E4%BB%B6%E5%86%85%E6%96%B0%E5%A2%9Egitalk%E7%9B%B8%E5%85%B3%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">在layout&#x2F;_partial目录下的article.ejs文件内新增gitalk相关的配置代码：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E5%9C%A8yilia%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%B0%E5%A2%9Egitalk%E7%9B%B8%E5%85%B3%E7%9A%84%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">最后在yilia主题配置文件中新增gitalk相关的配置：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E4%B8%80%E4%B8%8B%E5%8D%B3%E5%8F%AF"><span class="toc-number">5.</span> <span class="toc-text">更新一下即可</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
 
 
+        
+          
 
-  
-
-  
-   
+                
+                   
 <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
@@ -478,14 +461,14 @@ if(true){
 gitalk.render('gitalk-container') 
 }
 </script>
-  
-  
-  
+                    
 
-  
+                      
 
-  
-  <div id="SOHUCS" sid="Hexo主题yilia增加gitalk评论插件" ></div> 
+
+
+                            
+                              <div id="SOHUCS" sid="Hexo主题yilia增加gitalk评论插件" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -494,46 +477,51 @@ gitalk.render('gitalk-container')
     });
 </script>
 </script>
-  
+                                
 
-  
-
-  
-
-  
+                                  
 
 
+
+                                      
+                                            
           </div>
         </div>
       </div>
       <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2025 Ziven
-    	</div>
+	<div class="outer">
+		<div id="footer-info">
+			<div class="footer-left">
+				&copy; 2025
+					Ziven
+			</div>
 
-      	<div class="footer-right">
-      		
-      		<span id="busuanzi_container_site_pv">
-				总访问量: <span id="busuanzi_value_site_pv"></span>  |
-			</span>
+			<!-- 被干掉的不蒜子  -->
+			<div style="display: none;">
+				<span id="busuanzi_container_site_uv"></span><span id="busuanzi_container_site_pv"></span>
+			</div>
 
-			<span id="busuanzi_container_site_uv">
-				总访客: <span id="busuanzi_value_site_uv"></span>
-			</span>
+			<div class="footer-right">
 
-      	</div>
-    </div>
-  </div>
+
+				<span id="busuanzi_container_site_pv">
+					总访问量: <span id="busuanzi_value_site_pv"></span> |
+				</span>
+
+				<span id="busuanzi_container_site_uv">
+					总访客: <span id="busuanzi_value_site_uv"></span>
+				</span>
+
+
+			</div>
+		</div>
+	</div>
 </footer>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!--页面点击小红心-->
 <script type="text/javascript" src="/love.js"></script>
-
-
     </div>
     <script>
 	var yiliaConfig = {
@@ -621,19 +609,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">yilia优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网站统计</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
+                <a href="javascript:void(0)" class="js-tag color3">yilia优化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Test</a>
+                <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -646,6 +630,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">iOS开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">live2d</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Test</a>
               </li>
             
             <div class="clearfix"></div>
@@ -806,5 +798,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́)>被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
 
 
-<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":75,"height":150,"hOffset":75,"vOffset":-30},"mobile":{"show":false},"dialog":{"enable":false,"opacity":0.9,"hitokoto":true},"log":false,"tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"zIndex":19999999,"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":75,"height":150,"hOffset":75,"vOffset":-30},"mobile":{"show":false},"dialog":{"enable":false,"opacity":0.9,"hitokoto":true},"log":false,"tagMode":false});</script></body>
 </html>
