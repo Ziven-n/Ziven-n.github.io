@@ -65,6 +65,15 @@
   </url>
   
   <url>
+    <loc>https://ziven.cc/2018/07/20/SpriteKit-%E4%B8%AD-node-%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%88%96%E8%80%85%E9%97%AA%E7%83%81%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2025-05-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ziven.cc/2018/07/20/SpriteKit-%E4%B8%AD%E7%9A%84anchorPoint%E5%92%8Cposition/</loc>
     
     <lastmod>2025-05-22</lastmod>
@@ -75,15 +84,6 @@
   
   <url>
     <loc>https://ziven.cc/2018/06/28/Yilia%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/</loc>
-    
-    <lastmod>2025-05-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziven.cc/2018/07/20/SpriteKit-%E4%B8%AD-node-%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%88%96%E8%80%85%E9%97%AA%E7%83%81%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2025-05-22</lastmod>
     
@@ -184,14 +184,14 @@
   </url>
   
   <url>
-    <loc>https://ziven.cc/tags/live2d/</loc>
+    <loc>https://ziven.cc/tags/iOS%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ziven.cc/tags/iOS%E5%BC%80%E5%8F%91/</loc>
+    <loc>https://ziven.cc/tags/live2d/</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -221,14 +221,14 @@
   </url>
   
   <url>
-    <loc>https://ziven.cc/categories/anchorPoint/</loc>
+    <loc>https://ziven.cc/categories/zPosition/</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ziven.cc/categories/zPosition/</loc>
+    <loc>https://ziven.cc/categories/anchorPoint/</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
