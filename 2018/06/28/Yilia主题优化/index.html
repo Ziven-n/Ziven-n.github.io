@@ -48,137 +48,172 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #C0C0C0"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			<img src="/img/正方形狗头.png" class="js-avatar">
-		</a>
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Ziven</a></h1>
-		</hgroup>
-		
-		<p class="header-subtitle">赠人玫瑰 手有余香</p>
-		
-
-		<nav class="header-menu">
-			<ul>
-			
-				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/photos">相册</a></li>
-	        
-				<li><a href="/archives">归档</a></li>
-	        
-			</ul>
-		</nav>
-
-		<nav class="header-smart-menu">
-    		
-    			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">文章搜索 </a>
-    			
+    <div class="overlay"
+        style="background: url(/img/sky.png) center center / cover no-repeat">
+    </div>
+    <style>
+        .overlay {
+            background-size: cover !important;
+            background-position: center !important;
+            transition: all 0.3s ease;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <!-- <div class="overlay" style="background: #C0C0C0"> -->
+    <!-- </div> -->
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/正方形狗头.png" class="js-avatar">
+            </a>
+            <hgroup>
+                <h1 class="header-author"><a href="/">
+                        Ziven
+                    </a></h1>
+            </hgroup>
             
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接 </a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
-            
-		</nav>
+                <p class="header-subtitle">
+                    赠人玫瑰 手有余香
+                </p>
+                
 
-		<div style="position:fix";bottom:-120px;margin-top:100px;left:36px;width:76%;>
-		     
-	    </div>
+                    <nav class="header-menu">
+                        <ul>
+                            
+                                <li><a href="/">
+                                        主页
+                                    </a></li>
+                                
+                                <li><a href="/photos">
+                                        相册
+                                    </a></li>
+                                
+                                <li><a href="/archives">
+                                        归档
+                                    </a></li>
+                                
+                        </ul>
+                    </nav>
 
-<nav class="header-lovetime">
-    
-        <div class="lovetime">
-            <section class="love-time">
-                <p class="love-people">
-                    zw 和
-                        wj 走过了：</p>
-                <p id="love-time-count"></p>
-            </section>
-        </div>
-        <style>
-            /* 计时器 */
-            .header-lovetime{
-                animation: fade-in;
-                -webkit-animation: fade-in 1s;
-            }
-            .love-time {
-                z-index: 999;
-                bottom: 90px;
-                left: 30px;
-                margin-bottom: 12px;
-                text-align: center;
-                font-size: 15px;
-                color: #9a8c8c;
-                border-radius: 5px;
-            }
+                    <nav class="header-smart-menu">
+                        
+                            
+                                <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">
+                                    文章搜索 
+                                </a>
+                                
+                                    
+                            
+                                <a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">
+                                    友情链接 
+                                </a>
+                                
+                                    
+                            
+                                <a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">
+                                    关于我
+                                </a>
+                                
+                                    
+                    </nav>
 
-            .love-people {
-                font-size: 13px;
-            }
-            .love-time-count,
-            .love-time-asume {
-                font-size: 10px;
-            }
-        </style>
-        <script>
-            var starttime = "2011-10-01 00:00:00";
-            setInterval(function () { interval(starttime); }, 100);
-            function interval(e) {
-                var date1 = new Date(e);  //开始时间
-                var date2 = new Date();    //结束时间
-                var date3 = date2.getTime() - date1.getTime()  //时间差的毫秒数
+                    <div style="position:fix" ;bottom:-120px;margin-top:100px;left:36px;width:76%;>
 
-                //计算出相差天数
-                var days = Math.floor(date3 / (24 * 3600 * 1000))
+                    </div>
 
-                //计算出小时数
+                    <nav class="header-lovetime">
+                        
+                            <div class="lovetime">
+                                <section class="love-time">
+                                    <p class="love-people">
+                                        zw 和
+                                            wj 走过了：
+                                    </p>
+                                    <p id="love-time-count"></p>
+                                </section>
+                            </div>
+                            <style>
+                                /* 计时器 */
+                                .header-lovetime {
+                                    animation: fade-in;
+                                    -webkit-animation: fade-in 1s;
+                                }
 
-                var leave1 = date3 % (24 * 3600 * 1000)    //计算天数后剩余的毫秒数
-                var hours = Math.floor(leave1 / (3600 * 1000))
-                //计算相差分钟数
-                var leave2 = leave1 % (3600 * 1000)        //计算小时数后剩余的毫秒数
-                var minutes = Math.floor(leave2 / (60 * 1000))
+                                .love-time {
+                                    z-index: 999;
+                                    bottom: 90px;
+                                    left: 30px;
+                                    margin-bottom: 12px;
+                                    text-align: center;
+                                    font-size: 15px;
+                                    color: #9a8c8c;
+                                    border-radius: 5px;
+                                }
+
+                                .love-people {
+                                    font-size: 13px;
+                                }
+
+                                .love-time-count,
+                                .love-time-asume {
+                                    font-size: 10px;
+                                }
+                            </style>
+                            <script>
+                                var starttime = "2011-10-01 00:00:00";
+                                setInterval(function () { interval(starttime); }, 100);
+                                function interval(e) {
+                                    var date1 = new Date(e);  //开始时间
+                                    var date2 = new Date();    //结束时间
+                                    var date3 = date2.getTime() - date1.getTime()  //时间差的毫秒数
+
+                                    //计算出相差天数
+                                    var days = Math.floor(date3 / (24 * 3600 * 1000))
+
+                                    //计算出小时数
+
+                                    var leave1 = date3 % (24 * 3600 * 1000)    //计算天数后剩余的毫秒数
+                                    var hours = Math.floor(leave1 / (3600 * 1000))
+                                    //计算相差分钟数
+                                    var leave2 = leave1 % (3600 * 1000)        //计算小时数后剩余的毫秒数
+                                    var minutes = Math.floor(leave2 / (60 * 1000))
 
 
-                //计算相差秒数
-                var leave3 = leave2 % (60 * 1000)      //计算分钟数后剩余的毫秒数
-                var seconds = Math.round(leave3 / 1000)
+                                    //计算相差秒数
+                                    var leave3 = leave2 % (60 * 1000)      //计算分钟数后剩余的毫秒数
+                                    var seconds = Math.round(leave3 / 1000)
 
-                var countDays = document.getElementById("love-time-count")
-                countDays.innerHTML = days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒 "
-
-
-            }
-        </script>
-        
-</nav>
-
-		<nav class="header-nav">
-			<div class="social">
-				
-					<a class="github" target="_blank" href="https://github.com/Ziven-n" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="bilibili" target="_blank" href="https://space.bilibili.com/431426014" title="bilibili"><i class="icon-bilibili"></i></a>
-		        
-					<a class="mail" target="_blank" href="mailto:zivens233@gmail.com" title="mail"><i class="icon-mail"></i></a>
-		        
-			</div>
-		</nav>
+                                    var countDays = document.getElementById("love-time-count")
+                                    countDays.innerHTML = days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒 "
 
 
-		
-	</header>
+                                }
+                            </script>
+                            
+                    </nav>
 
-</div>
+                    <nav class="header-nav">
+                        <div class="social">
+                            
+                                <a class="github" target="_blank" href="https://github.com/Ziven-n"
+                                    title="github"><i class="icon-github"></i></a>
+                                
+                                <a class="bilibili" target="_blank" href="https://space.bilibili.com/431426014"
+                                    title="bilibili"><i class="icon-bilibili"></i></a>
+                                
+                                <a class="mail" target="_blank" href="mailto:zivens233@gmail.com"
+                                    title="mail"><i class="icon-mail"></i></a>
+                                
+                        </div>
+                    </nav>
 
+
+
+        </header>
+
+    </div>
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
@@ -615,6 +650,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">yilia优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hello</a>
               </li>
              
@@ -623,15 +662,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">yilia优化</a>
+                <a href="javascript:void(0)" class="js-tag color2">live2d</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">iOS开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">live2d</a>
               </li>
              
               <li class="article-tag-list-item">
