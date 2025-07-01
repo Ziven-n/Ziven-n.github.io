@@ -389,10 +389,10 @@
               </div>
               <div id="js-content" class="content-ll">
                 <!-- Import APlayer -->
-<link href="https://cdn.jsdelivr.net/npm/aplayer@1.9.0/dist/APlayer.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.0/dist/APlayer.min.js"></script>
+<!-- <link href="https://cdn.jsdelivr.net/npm/aplayer@1.9.0/dist/APlayer.min.css" rel="stylesheet"> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.0/dist/APlayer.min.js"></script> -->
 <!-- Import meting.js -->
-<script src="https://cdn.jsdelivr.net/npm/meting@1.1.1/dist/Meting.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/meting@1.1.1/dist/Meting.min.js"></script> -->
 
 
 
@@ -609,6 +609,140 @@ gitalk.render('gitalk-container')
 
 <!--页面点击小红心-->
 <script type="text/javascript" src="/love.js"></script>
+
+<!-- APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<!-- 引入 PJAX 实现局部刷新 -->
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+<script>
+	// 初始化 PJAX，只刷新 .mid-col 区域
+	window.pjax = new Pjax({
+		elements: "a:not([target='_blank']):not([href^='#']):not([href^='javascript:'])", // 更精确的链接选择器
+		selectors: [
+			"title",
+			".mid-col .body-wrap", // 只刷新文章内容区域
+			".mid-col .menu-l" // 只刷新菜单区域
+		],
+		cacheBust: false,
+		timeout: 0
+	});
+
+	// PJAX 完成后，重新初始化所有功能
+	document.addEventListener('pjax:complete', function () {
+		// 延迟执行 slider 初始化，确保 DOM 已更新
+		setTimeout(function () {
+			if (typeof init === 'function') {
+				init();
+			}
+		}, 200);
+
+		// 重新执行访问统计脚本
+		setTimeout(function () {
+			// 移除旧的统计脚本
+			var oldScripts = document.querySelectorAll('script[src*="vercount.one"]');
+			oldScripts.forEach(function (script) {
+				script.remove();
+			});
+
+			// 重新加载 Vercount 统计脚本
+			var script = document.createElement('script');
+			script.src = 'https://vercount.one/js';
+			script.defer = true;
+			document.head.appendChild(script);
+		}, 300);
+
+		// 重新初始化相册功能
+		setTimeout(function () {
+			// 检查是否在相册页面
+			if (window.location.pathname.includes('/photos/')) {
+				// 移除旧的相册脚本
+				var oldInsScripts = document.querySelectorAll('script[src*="ins.js"]');
+				oldInsScripts.forEach(function (script) {
+					script.remove();
+				});
+
+				// 重新加载相册脚本，脚本会自动初始化
+				var insScript = document.createElement('script');
+				insScript.src = '/photos/ins.js';
+				document.head.appendChild(insScript);
+
+				// 同时重新加载CSS文件
+				var oldCss = document.querySelector('link[href*="ins.css"]');
+				if (oldCss) {
+					oldCss.remove();
+				}
+				var cssLink = document.createElement('link');
+				cssLink.rel = 'stylesheet';
+				cssLink.href = '/photos/ins.css';
+				document.head.appendChild(cssLink);
+
+				// 强制刷新相册内容
+				setTimeout(function () {
+					var instagramDiv = document.querySelector('.instagram');
+					if (instagramDiv && instagramDiv.innerHTML.includes('图片正在加载中')) {
+						// 如果还在显示加载中，重新触发初始化
+						if (typeof Ins !== 'undefined' && Ins.init) {
+							Ins.init();
+						}
+					}
+				}, 500);
+			}
+		}, 400);
+	});
+
+	function insertMetingPlayer() {
+		if (!document.querySelector('meting-js')) {
+			var meting = document.createElement('meting-js');
+			meting.setAttribute('server', 'netease');
+			meting.setAttribute('type', 'playlist');
+			meting.setAttribute('id', '639737355');
+			meting.setAttribute('fixed', 'false');
+			meting.setAttribute('order', 'list');
+			meting.setAttribute('autoplay', 'true');
+			meting.setAttribute('mini', 'false');
+			meting.setAttribute('theme', '#64ffda');
+			meting.setAttribute('list-folded', 'true');
+			meting.setAttribute('list-max-height', '300px');
+			meting.setAttribute('muted', 'true');
+			document.body.appendChild(meting);
+		}
+	}
+	insertMetingPlayer();
+	document.addEventListener('pjax:complete', insertMetingPlayer);
+</script>
+
+<style>
+	.aplayer {
+		position: fixed !important;
+		left: 10px !important;
+		bottom: 0px !important;
+		width: 280px !important;
+		z-index: 9999 !important;
+		border-radius: 8px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+		background: #fff !important;
+		pointer-events: auto !important;
+		right: auto !important;
+		transform: none !important;
+		top: auto !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		float: none !important;
+		clear: none !important;
+		/* 更强的约束 */
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+		max-width: 280px !important;
+		min-width: 280px !important;
+		max-height: none !important;
+		min-height: auto !important;
+	}
+</style>
       </div>
       <script>
 	var yiliaConfig = {
@@ -638,39 +772,38 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      
+    
       
     
       
-      
-      
-    
-      
-      
-      
     
     
-
     <ul style="width: 70%">
-    
-    
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">文章搜索 </a></li>
       
         
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情链接 </a></li>
-      
+          <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')">
+            <a href="javascript:void(0)" q-class="active:innerArchive">文章搜索 </a>
+          </li>
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+        
+          <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')">
+            <a href="javascript:void(0)" q-class="active:friends">友情链接 </a>
+          </li>
+        
       
         
+          <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')">
+            <a href="javascript:void(0)" q-class="active:aboutme">关于我</a>
+          </li>
+        
+      
     </ul>
   </div>
   <div class="tools-wrap">
     
-    	<section class="tools-section tools-section-all" q-show="innerArchive">
+      <section class="tools-section tools-section-all" q-show="innerArchive">
         <div class="search-wrap">
           <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
           <i class="icon-search icon" q-show="search|isEmptyStr"></i>
@@ -682,53 +815,53 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SpriteKit</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">iOS游戏开发</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网站统计</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gitalk</a>
               </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">yilia优化</a>
-              </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hello</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">world</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">iOS开发</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">live2d</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">谷歌服务</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模拟器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">yilia优化</a>
               </li>
             
             <div class="clearfix"></div>
@@ -738,7 +871,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
             缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
-<pre style="font-size: 12px;" q-show="jsonFail">
+            <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
     meta: false
     pages: false
@@ -771,72 +904,70 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </p>
           </li>
         </ul>
-    	</section>
+      </section>
     
-
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://pub-web.flutter-io.cn" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>flutter插件库</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://docs.flutter.cn/cookbook" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>flutter中文网</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://json.parser.online.fr" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>json数据整理</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://caijinglong.github.io/json2dart/index_ch.html" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>flutter-json转model</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://fonts.google.com/icons" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Google Icons</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://icon.wuruihong.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>App图标生成</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://www.sioe.cn/yingyong/yanse-rgb-16/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>十六进制颜色码</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://go.p2hp.com/go.dev/doc/tutorial/getting-started" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>go教程中文版</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://go.dev/doc/tutorial/getting-started" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>go教程英文版</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://demo.hedgedoc.org" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Markdown编辑器</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
+      <section class="tools-section tools-section-friends" q-show="friends">
+        
+          <ul class="search-ul">
+            
+              <li class="search-li">
+                <a href="https://pub-web.flutter-io.cn" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>flutter插件库</a>
+              </li>
+            
+              <li class="search-li">
+                <a href="https://docs.flutter.cn/cookbook" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>flutter中文网</a>
+              </li>
+            
+              <li class="search-li">
+                <a href="http://json.parser.online.fr" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>json数据整理</a>
+              </li>
+            
+              <li class="search-li">
+                <a href="https://caijinglong.github.io/json2dart/index_ch.html" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>flutter-json转model</a>
+              </li>
+            
+              <li class="search-li">
+                <a href="https://fonts.google.com/icons" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Google Icons</a>
+              </li>
+            
+              <li class="search-li">
+                <a href="https://icon.wuruihong.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>App图标生成</a>
+              </li>
+            
+              <li class="search-li">
+                <a href="https://www.sioe.cn/yingyong/yanse-rgb-16/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>十六进制颜色码</a>
+              </li>
+            
+              <li class="search-li">
+                <a href="https://go.p2hp.com/go.dev/doc/tutorial/getting-started" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>go教程中文版</a>
+              </li>
+            
+              <li class="search-li">
+                <a href="https://go.dev/doc/tutorial/getting-started" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>go教程英文版</a>
+              </li>
+            
+              <li class="search-li">
+                <a href="https://demo.hedgedoc.org" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Markdown编辑器</a>
+              </li>
+            
+          </ul>
+        
+      </section>
     
-
     
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">
-          <div>
-          又菜又爱折腾
-          <img src= height="150" width="150"></div>
+      <section class="tools-section tools-section-me" q-show="aboutme">
+        
+          <div class="aboutme-wrap" id="js-aboutme">
+            <div>
+              又菜又爱折腾
+              <img src="" height="150" width="150">
+            </div>
           </div>
-  	  	
-    	</section>
+        
+      </section>
     
   </div>
-  
 </div>
           <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -910,6 +1041,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       type="text/javascript">var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title = "(๑•̀ㅂ•́)>被发现了～", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })</script>
 
 
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"zIndex":19999999,"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":60,"height":120,"hOffset":10,"vOffset":-15},"mobile":{"show":false},"dialog":{"enable":false,"opacity":0.9,"hitokoto":true},"log":false,"tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"zIndex":19999999,"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":60,"height":120,"hOffset":5,"vOffset":-15},"mobile":{"show":false},"dialog":{"enable":false,"opacity":0.9,"hitokoto":true},"log":false,"tagMode":false});</script></body>
 
   </html>
