@@ -571,6 +571,10 @@
 				}, 500);
 			}
 		}, 400);
+
+		// 清空文章阅读数，避免显示错误数字或闪烁
+		var pvSpan = document.getElementById('vercount_value_page_pv');
+		if (pvSpan) pvSpan.textContent = '';
 	});
 
 	function insertMetingPlayer() {
@@ -716,6 +720,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">yilia优化</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hello</a>
               </li>
             
@@ -737,10 +745,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模拟器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">yilia优化</a>
               </li>
             
             <div class="clearfix"></div>
