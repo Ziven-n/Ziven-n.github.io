@@ -10,22 +10,18 @@
     <link rel="dns-prefetch" href="https://ziven.cc">
     <title>
       
-        flutter接入FCM推送通知 | 
+        Tag: Flutter | 
             --
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="集成依赖12firebase_messaging: ^15.2.7flutter_local_notifications: ^19.2.1">
-<meta property="og:type" content="article">
-<meta property="og:title" content="flutter接入FCM推送通知">
-<meta property="og:url" content="https://ziven.cc/2025/07/03/flutter%E6%8E%A5%E5%85%A5FCM%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5/index.html">
+    <meta name="description" content="😯😯">
+<meta property="og:type" content="website">
+<meta property="og:title" content="--">
+<meta property="og:url" content="https://ziven.cc/tags/Flutter/index.html">
 <meta property="og:site_name" content="--">
-<meta property="og:description" content="集成依赖12firebase_messaging: ^15.2.7flutter_local_notifications: ^19.2.1">
+<meta property="og:description" content="😯😯">
 <meta property="og:locale">
-<meta property="article:published_time" content="2025-07-03T11:19:22.000Z">
-<meta property="article:modified_time" content="2025-07-03T07:42:18.518Z">
 <meta property="article:author" content="Ziven">
-<meta property="article:tag" content="FCM">
-<meta property="article:tag" content="推送">
 <meta name="twitter:card" content="summary">
       
         <link rel="alternative" href="/atom.xml" title="--" type="application/atom+xml">
@@ -389,203 +385,80 @@
                   class="anm-canvas"></canvas>
               </div>
               <div id="js-content" class="content-ll">
-                <!-- Import APlayer -->
-<!-- <link href="https://cdn.jsdelivr.net/npm/aplayer@1.9.0/dist/APlayer.min.css" rel="stylesheet"> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.0/dist/APlayer.min.js"></script> -->
-<!-- Import meting.js -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/meting@1.1.1/dist/Meting.min.js"></script> -->
-
-
-
-
-<article id="post-flutter接入FCM推送通知"
-  class="article article-type-post " itemscope itemprop="blogPost">
-
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+                
+              
+                
+                  
+                    
+                      
+                          
+                            <section class="archives-wrap">
+                              <div class="archive-year-wrap">
+                                <a href="/archives/2025" class="archive-year">
+                                  2025
+                                </a>
+                              </div>
+                              <div class="archives">
+                                
+                                  <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2025/08/23/APP%E5%9C%A8%E7%9C%9F%E6%9C%BA%E8%BF%90%E8%A1%8C%E6%97%B6%E5%8D%A1%E5%9C%A8%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2025-08-22T17:57:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-08-22</time>
+</a>
+        </div>
+    	 
   
-    <h1 class="article-title" itemprop="name">
-      flutter接入FCM推送通知
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2025/08/23/APP%E5%9C%A8%E7%9C%9F%E6%9C%BA%E8%BF%90%E8%A1%8C%E6%97%B6%E5%8D%A1%E5%9C%A8%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/">APP在真机运行时卡在启动的问题</a>
     </h1>
   
 
-
-          <!--显示阅读次数#ef7522【黄色】-->
+        <div class="article-info info-on-right">
           
-            <br />
-            <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
-              <span class="icon-sort"></span>
-
-              <span style="color:#C4C5FD;font-size:14px;">
-                阅读数: <span id="vercount_value_page_pv"></span>次 &nbsp;&nbsp;
-
-                <!-- 阅读数: <span id="busuanzi_value_page_pv" style=" color:#C4C5FD;font-size:14px"></span>次 &nbsp;&nbsp; -->
-
-            </a>
-            
-
-              
-                <a href="/2025/07/03/flutter%E6%8E%A5%E5%85%A5FCM%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5/" class="archive-article-date">
-  	<time datetime="2025-07-03T11:19:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-03</time>
-</a>
-                  
-      </header>
-      
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <h4 id="集成依赖"><a href="#集成依赖" class="headerlink" title="集成依赖"></a>集成依赖</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firebase_messaging: ^15.2.7</span><br><span class="line">flutter_local_notifications: ^19.2.1</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<p>如果前面有使用firebase相关的功能比如<code>firebase_auth</code>、<code>firebase_core</code>，会需要升级，一般建议全都使用最新的,<br>firebase相关的集成这里先默认都已经集成完毕</p>
-<p>firebase如果已经集成完毕，会在项目中各处地方看到<code>google-services.json</code>文件，里面有你在firebase控制台创建项目的相关信息</p>
-<h4 id="写一个工具类来处理推送相关的设置"><a href="#写一个工具类来处理推送相关的设置" class="headerlink" title="写一个工具类来处理推送相关的设置"></a>写一个工具类来处理推送相关的设置</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;dart:convert&#x27;;</span><br><span class="line">import &#x27;dart:io&#x27;;</span><br><span class="line">import &#x27;package:firebase_messaging/firebase_messaging.dart&#x27;;</span><br><span class="line">import &#x27;package:flutter/foundation.dart&#x27;;</span><br><span class="line">import &#x27;package:flutter_local_notifications/flutter_local_notifications.dart&#x27;;</span><br><span class="line">import &#x27;package:spotito/common/head.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class PushManager &#123;</span><br><span class="line">  factory PushManager() =&gt; _instance;</span><br><span class="line"></span><br><span class="line">  PushManager._();</span><br><span class="line"></span><br><span class="line">  static final PushManager _instance = PushManager._();</span><br><span class="line"></span><br><span class="line">  //FCM SDK对象</span><br><span class="line">  final _firebaseMessaging = FirebaseMessaging.instance;</span><br><span class="line"></span><br><span class="line">  //Notifications插件对象</span><br><span class="line">  final _localNotifications = FlutterLocalNotificationsPlugin();</span><br><span class="line"></span><br><span class="line">  //Android 8+ 的消息通道</span><br><span class="line">  final _androidChannel = const AndroidNotificationChannel(</span><br><span class="line">    &#x27;default_channel&#x27;, //设置 Channel ID</span><br><span class="line">    &#x27;Default Notifications&#x27;, //设置 Channel 名称</span><br><span class="line">    importance: Importance.max, // 如果是default则不会有横幅提醒</span><br><span class="line">  ); //设置该 Channel 的优先级</span><br><span class="line"></span><br><span class="line">  // 初始化，获取设备token</span><br><span class="line">  Future&lt;void&gt; initPush() async &#123;</span><br><span class="line">    //申请动态通知权限</span><br><span class="line">    await _firebaseMessaging.requestPermission();</span><br><span class="line">    _firebaseMessaging.setAutoInitEnabled(false);</span><br><span class="line">    //获取 FCM Token</span><br><span class="line">    final fCMToken = await _firebaseMessaging.getToken();</span><br><span class="line">    if (fCMToken != null) &#123;</span><br><span class="line">      debugPrint(&quot;获取到FCMToken:$fCMToken&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    //刷新 FCM Token 的监听</span><br><span class="line">    _firebaseMessaging.onTokenRefresh.listen((newToken) &#123;</span><br><span class="line">      debugPrint(&quot;获取到刷新后的FCMToken:$newToken&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    //拿到 FCM Token 之后初始化一些监听</span><br><span class="line">    _initPushNotifications();</span><br><span class="line">    _initLocalNotifications();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /// Notifications 插件初始化，监听前台消息</span><br><span class="line">  Future _initLocalNotifications() async &#123;</span><br><span class="line">    const iOS = DarwinInitializationSettings();</span><br><span class="line">    // 图标需要是白色透明背景否则会显示不出来</span><br><span class="line">    const android = AndroidInitializationSettings(&#x27;push_icon2&#x27;);</span><br><span class="line">    // Notifications 插件只需要处理 Android 和 iOS 平台的配置</span><br><span class="line">    const settings = InitializationSettings(android: android, iOS: iOS);</span><br><span class="line">    // Notifications 插件初始化</span><br><span class="line">    await _localNotifications.initialize(</span><br><span class="line">      settings,</span><br><span class="line">      onDidReceiveNotificationResponse: (NotificationResponse response) &#123;</span><br><span class="line">        // android 前台消息点击回调</span><br><span class="line">        final message = RemoteMessage.fromMap(jsonDecode(response.payload!));</span><br><span class="line">        // 处理收到消息</span><br><span class="line">        handleMessage(message);</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">    //Android 8 以上会通过 Channel 创建对应的通知渠道</span><br><span class="line">    final platform =</span><br><span class="line">        _localNotifications</span><br><span class="line">            .resolvePlatformSpecificImplementation&lt;</span><br><span class="line">              AndroidFlutterLocalNotificationsPlugin</span><br><span class="line">            &gt;();</span><br><span class="line">    await platform?.createNotificationChannel(_androidChannel);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /// FCM 初始化接收消息的各种回调</span><br><span class="line">  Future _initPushNotifications() async &#123;</span><br><span class="line">    await _firebaseMessaging.setForegroundNotificationPresentationOptions(</span><br><span class="line">      alert: true,</span><br><span class="line">      badge: true,</span><br><span class="line">      sound: true,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    // 打开app时，会执行该回调，获取消息（通常是程序终止时，点击消息打开app的回调）</span><br><span class="line">    _firebaseMessaging.getInitialMessage().then((RemoteMessage? message) &#123;</span><br><span class="line">      if (message == null) return; // 没有消息不执行后操作</span><br><span class="line">      handleMessage(message);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    // 后台程序运行时，点击消息触发</span><br><span class="line">    FirebaseMessaging.onMessageOpenedApp.listen(</span><br><span class="line">      (RemoteMessage message) =&gt; handleMessage(message),</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    // 前台消息，android不会弹出通知框，所以需要 Notifications 插件自定义本地通知（iOS没有前台消息，iOS的前台消息和后台运行时一样的效果）</span><br><span class="line">    FirebaseMessaging.onMessage.listen((message) &#123;</span><br><span class="line">      debugPrint(&quot;前台收到推送消息=======$&#123;message.notification&#125;&quot;);</span><br><span class="line">      final notification = message.notification;</span><br><span class="line">      if (notification == null) return;</span><br><span class="line">      if (Platform.isIOS) return;</span><br><span class="line">      _localNotifications.show(</span><br><span class="line">        notification.hashCode,</span><br><span class="line">        notification.title,</span><br><span class="line">        notification.body,</span><br><span class="line">        NotificationDetails(</span><br><span class="line">          android: AndroidNotificationDetails(</span><br><span class="line">            _androidChannel.id,</span><br><span class="line">            _androidChannel.name,</span><br><span class="line">            icon: &#x27;push_icon2&#x27;,</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">        payload: jsonEncode(message.toMap()),</span><br><span class="line">      );</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 处理收到的消息，比如跳转页面或者其他处理</span><br><span class="line">  void handleMessage(RemoteMessage message) &#123;</span><br><span class="line">    final dataJson = message.data;</span><br><span class="line">    debugPrint(&quot;点击收到的推送消息:$dataJson&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="在Main-dart中新增初始化代码"><a href="#在Main-dart中新增初始化代码" class="headerlink" title="在Main.dart中新增初始化代码"></a>在<code>Main.dart</code>中新增初始化代码</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PushManager().initPush();</span><br></pre></td></tr></table></figure>
-<p>如果前面有集成firebase相关的功能，写在</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">await Firebase.initializeApp(</span><br><span class="line">        options: DefaultFirebaseOptions.currentPlatform,</span><br><span class="line">      );</span><br></pre></td></tr></table></figure>
-<p>后面即可</p>
-<hr>
-<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>1.推送图标在安卓上需要单独设置，iOS不需要，单独让设计出一张白色透明背景的图，建议48*48的尺寸，太小了会显示不清，图片放在<code>android/app/src/main/res/drawable</code>文件夹下面，设置的时候直接写图片名称就可以了</p>
-<p>2.获取到的Token会刷新，针对安卓，可以在<code>AndroidManifest.xml</code>中新增</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta-data</span><br><span class="line">    android:name=&quot;firebase_messaging_auto_init_enabled&quot;</span><br><span class="line">    android:value=&quot;false&quot; /&gt;</span><br><span class="line">&lt;meta-data</span><br><span class="line">    android:name=&quot;firebase_analytics_collection_enabled&quot;</span><br><span class="line">    android:value=&quot;false&quot; /&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>iOS上需要在<code>info.plist</code>文件中新增</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FirebaseMessagingAutoInitEnabled = No</span><br></pre></td></tr></table></figure>
-
-<p>3.安卓集成<code>flutter_local_notifications</code>时，需要额外配置脱糖</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">compileOptions &#123;</span><br><span class="line">    isCoreLibraryDesugaringEnabled = true</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">  // 脱糖库 需要搭配 isCoreLibraryDesugaringEnabled = true 使用</span><br><span class="line"> coreLibraryDesugaring(&quot;com.android.tools:desugar_jdk_libs:2.1.4&quot;) </span><br><span class="line"> ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4.iOS集成时需要在AppDelegate文件中新增初始化代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import Flutter</span><br><span class="line">import UIKit</span><br><span class="line">// 新增</span><br><span class="line">import FirebaseCore</span><br><span class="line"></span><br><span class="line">@main</span><br><span class="line">@objc class AppDelegate: FlutterAppDelegate &#123;</span><br><span class="line">  override func application(</span><br><span class="line">    _ application: UIApplication,</span><br><span class="line">    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?</span><br><span class="line">  ) -&gt; Bool &#123;</span><br><span class="line">    // 新增  </span><br><span class="line">    FirebaseApp.configure()</span><br><span class="line">    </span><br><span class="line">    GeneratedPluginRegistrant.register(with: self)</span><br><span class="line">    return super.application(application, didFinishLaunchingWithOptions: launchOptions)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>同时项目的<code>Signing &amp; Capabilities</code>开启推送相关设置<br>在firebase上上传推送证书，或者直接使用<code>APNs 身份验证密钥</code>来配置</p>
-
-                      
-
-                        
-        </div>
-        <div class="article-info article-info-index">
-          
-              
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">FCM</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Flutter</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">推送</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Xcode</a>
         		</li>
       		
 		</ul>
 	</div>
 
-                
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/flutter/firebase//" class="article-tag-list-link color4">firebase</a>
+        			<a href="/categories/App开发//" class="article-tag-list-link color1">App开发</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-                  
-
-                      
-                            <div class="clearfix"></div>
         </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2025/08/23/APP%E5%9C%A8%E7%9C%9F%E6%9C%BA%E8%BF%90%E8%A1%8C%E6%97%B6%E5%8D%A1%E5%9C%A8%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          APP在真机运行时卡在启动的问题
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2025/06/16/%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E8%B0%B7%E6%AD%8C%E6%9C%8D%E5%8A%A1%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">安卓模拟器无法访问谷歌服务的问题</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-    
-      <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-                
-    </div>
-</aside>
-
-
-        
-          
-
-                
-                   
-<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: '29fd06ce2375b14338fe',
-  	clientSecret: '090b271a3e6ce6fae6fc80ce4d40e3ee14b671aa',
-  	repo: 'mycomments',
-  	owner: 'Ziven-n',
-  	admin: ['Ziven-n'],
-  	id: 'Thu Jul 03 2025 11:19:22 GMT+0000',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-                    
-
-                      
-
-
-
+                                    
+                                      
+                              </div>
+                            </section>
                             
-                              <div id="SOHUCS" sid="flutter接入FCM推送通知" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "true",
-        conf: "true"
-    });
-</script>
-</script>
-                                
+
+                              
 
                                   
-
-
-
-                                      
-                                            
               </div>
             </div>
           </div>
@@ -758,9 +631,9 @@ gitalk.render('gitalk-container')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
