@@ -11,15 +11,6 @@
   </url>
   
   <url>
-    <loc>https://ziven.cc/html/vidcraft_privacy_policy.html</loc>
-    
-    <lastmod>2026-07-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ziven.cc/2026/01/22/flutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2026-01-21</lastmod>
@@ -182,20 +173,6 @@
 
   
   <url>
-    <loc>https://ziven.cc/tags/Flutter/</loc>
-    <lastmod>2026-07-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziven.cc/tags/Xcode/</loc>
-    <lastmod>2026-07-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ziven.cc/tags/SpriteKit/</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -204,6 +181,20 @@
   
   <url>
     <loc>https://ziven.cc/tags/iOS%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ziven.cc/tags/Flutter/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ziven.cc/tags/Xcode/</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -273,14 +264,7 @@
   </url>
   
   <url>
-    <loc>https://ziven.cc/tags/%E8%B0%B7%E6%AD%8C%E6%9C%8D%E5%8A%A1/</loc>
-    <lastmod>2026-07-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziven.cc/tags/%E6%A8%A1%E6%8B%9F%E5%99%A8/</loc>
+    <loc>https://ziven.cc/tags/iOS%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -294,7 +278,14 @@
   </url>
   
   <url>
-    <loc>https://ziven.cc/tags/iOS%E5%BC%80%E5%8F%91/</loc>
+    <loc>https://ziven.cc/tags/%E8%B0%B7%E6%AD%8C%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ziven.cc/tags/%E6%A8%A1%E6%8B%9F%E5%99%A8/</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -303,14 +294,14 @@
 
   
   <url>
-    <loc>https://ziven.cc/categories/App%E5%BC%80%E5%8F%91/</loc>
+    <loc>https://ziven.cc/categories/FlappyBird/</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ziven.cc/categories/FlappyBird/</loc>
+    <loc>https://ziven.cc/categories/App%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -359,6 +350,13 @@
   </url>
   
   <url>
+    <loc>https://ziven.cc/categories/go/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ziven.cc/categories/aplayer/</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -366,7 +364,7 @@
   </url>
   
   <url>
-    <loc>https://ziven.cc/categories/go/</loc>
+    <loc>https://ziven.cc/categories/%E5%88%86%E4%BA%AB%E9%9B%86%E6%88%90/</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -388,13 +386,6 @@
   
   <url>
     <loc>https://ziven.cc/categories/aplayer/music/</loc>
-    <lastmod>2026-07-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziven.cc/categories/%E5%88%86%E4%BA%AB%E9%9B%86%E6%88%90/</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
